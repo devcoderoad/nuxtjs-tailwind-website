@@ -1,11 +1,38 @@
 module.exports = {
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
-  darkMode: false, // or 'media' or 'class'
+  purge: [
+    './components/**/*.{vue,js}',
+    './layouts/**/*.vue',
+    './pages/**/*.vue',
+    './plugins/**/*.{js,ts}',
+    './nuxt.config.{js,ts}',
+    'content/**/**.md'
+  ],
   theme: {
-    extend: {},
+    darkSelector: '.dark-mode'
+    // extend: {
+    //   fontFamily:{
+    //     lora: ''
+    //   }
+    // },
   },
   variants: {
-    extend: {},
+    backgroundColor: [
+      'dark',
+      'dark-hover',
+      'dark-group-hover',
+      'dark-even',
+      'dark-odd',
+      'hover',
+      'responsive'
+    ],
+    borderColor: [
+      'dark',
+      'dark-focus',
+      'dark-focus-within',
+      'hover',
+      'responsive'
+    ],
+    textColor: ['dark', 'dark-hover', 'dark-active', 'hover', 'responsive']
   },
-  plugins: [],
-};
+  plugins: [require('tailwindcss-dark-mode')(), require('postcss')]
+}

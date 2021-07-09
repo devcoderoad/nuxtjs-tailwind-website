@@ -1,14 +1,12 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": {     
-      "~*": ["./*"],
-      "@*": ["./*"],
+    "paths": {
       "~/*": ["./*"],
       "@/*": ["./*"],
       "~~/*": ["./*"],
-      "@@/*": ["./*"],      
+      "@@/*": ["./*"]
     }
   },
-  "exclude": ["node_modules", ".next", ".vercel", ".vscode", "dist"]
+  "exclude": ["node_modules", ".nuxt", "dist"]
 }
