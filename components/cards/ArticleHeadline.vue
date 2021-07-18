@@ -1,6 +1,6 @@
 <template>
-  <div v-if="item" class="lg:container mx-auto my-12">
-    <div class="row">
+  <div v-if="items && items.length" class="lg:container mx-auto my-12">
+    <div v-for="item in items" :key="item.slug" class="row">
       <Nuxt-Link
         :to="localePath({ name: 'article-slug', params: { slug: item.slug } })"
         class="col-12 mb-4 shadow-lg hover:shadow-xl"
@@ -31,7 +31,10 @@
               <div class="text-cyan-600">
                 {{ item.author && item.author.name }}
               </div>
-              <div class="text-gray-500">Posted: {{ item.createdAt }}</div>
+              <div class="text-gray-500">
+                Posted:
+                {{ $dateFns.format(item.createdAt, 'MMMM dd, yyyy') }}
+              </div>
             </figcaption>
           </div>
         </figure>
@@ -43,7 +46,7 @@
 <script>
 export default {
   props: {
-    item: { type: Object, required: true, default: () => {} }
+    items: { type: Array, required: true, default: () => [] }
   }
 }
 </script>

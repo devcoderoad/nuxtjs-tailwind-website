@@ -1,11 +1,14 @@
 <template>
-  <div v-if="items && items.length > 0" class="lg:container mx-auto my-12">
-    <div class="row">
+  <div class="lg:container mx-auto">
+    <div
+      v-if="items && items.length > 0"
+      class="mx-auto my-12 lg:flex space-x-4"
+    >
       <Nuxt-Link
         v-for="(item, index) in items"
         :key="item.slug"
         :to="localePath({ name: 'article-slug', params: { slug: item.slug } })"
-        class="col-12 mb-4 shadow-lg hover:shadow-xl"
+        class="mb-4 shadow-lg hover:shadow-xl lg:flex-1"
       >
         <figure class="md:flex bg-gray-100 p-8 md:p-0" :rel="`card-${index}`">
           <img
@@ -25,12 +28,15 @@
           <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
             <blockquote>
               <p class="text-lg font-semibold">
-                {{ item.description }}
+                {{ item.description.slice(0, 50) }}...
               </p>
             </blockquote>
             <figcaption class="font-medium">
               <div class="text-cyan-600">{{ item.author.name }}</div>
-              <div class="text-gray-500">Posted: {{ item.createdAt }}</div>
+              <div class="text-gray-500">
+                Posted:
+                {{ $dateFns.format(item.createdAt, 'MMMM dd, yyyy') }}
+              </div>
             </figcaption>
           </div>
         </figure>

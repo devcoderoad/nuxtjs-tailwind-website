@@ -35,17 +35,21 @@ const mutations = {
 // top level actions
 const actions = {
   async nuxtServerInit({ commit, context }, { req }) {
-    commit('GET_MENU', 'loading')
-    const storeItems = await this.$content('pages')
-      .only(['title', 'slug'])
-      .where({ slug: { $ne: 'home' }, showInMenu: true, status: 'publish' })
-      .sortBy('indexOrder', 'asc')
-      .limit(5)
-      .fetch()
-      .catch((err) => {
-        commit('SET_MENU_ERROR', err)
-      })
-    commit('SET_MENU', storeItems)
+    try {
+      commit('GET_MENU', 'loading')
+      const storeItems = await this.$content('pages')
+        .only(['title', 'slug'])
+        .where({ slug: { $ne: 'home' }, showInMenu: true, status: 'publish' })
+        .sortBy('indexOrder', 'asc')
+        .limit(5)
+        .fetch()
+        .catch((err) => {
+          commit('SET_MENU_ERROR', err)
+        })
+      commit('SET_MENU', storeItems)
+    } catch (error) {
+      commit('SET_MENU_ERROR', error)
+    }
   }
 }
 
