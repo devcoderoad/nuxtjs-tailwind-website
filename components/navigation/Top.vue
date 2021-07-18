@@ -36,7 +36,7 @@
                     })
                   "
                   :rel="`rel-${index}`"
-                  :class="`${`ml-4 px-3 py-2 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white`} btn`"
+                  :class="`${`ml-4 px-3 py-2 text-gray-400 hover:text-gray-500 focus:text-white capitalize font-bold text-sm`}`"
                 >
                   {{ item.slug }}</NuxtLink
                 >
@@ -215,76 +215,67 @@
               block
               px-3
               py-2
-              rounded-md
               text-base
               font-medium
-              text-white
-              bg-gray-900
-              focus:outline-none focus:text-white focus:bg-gray-700
+              text-gray-500
+              hover:text-white
+              focus:text-white focus:bg-gray-700
             "
             >Dashboard</a
           >
           <a
             href="#"
             class="
-              mt-1
               block
               px-3
               py-2
-              rounded-md
               text-base
               font-medium
-              text-gray-400
-              hover:text-white hover:bg-gray-700
-              focus:outline-none focus:text-white focus:bg-gray-700
+              text-gray-500
+              hover:text-white
+              focus:text-white focus:bg-gray-700
             "
             >Team</a
           >
           <a
             href="#"
             class="
-              mt-1
               block
               px-3
               py-2
-              rounded-md
               text-base
               font-medium
-              text-gray-400
-              hover:text-white hover:bg-gray-700
-              focus:outline-none focus:text-white focus:bg-gray-700
+              text-gray-500
+              hover:text-white
+              focus:text-white focus:bg-gray-700
             "
             >Projects</a
           >
           <a
             href="#"
             class="
-              mt-1
               block
               px-3
               py-2
-              rounded-md
               text-base
               font-medium
-              text-gray-400
-              hover:text-white hover:bg-gray-700
-              focus:outline-none focus:text-white focus:bg-gray-700
+              text-gray-500
+              hover:text-white
+              focus:text-white focus:bg-gray-700
             "
             >Calendar</a
           >
           <a
             href="#"
             class="
-              mt-1
               block
               px-3
               py-2
-              rounded-md
               text-base
               font-medium
-              text-gray-400
-              hover:text-white hover:bg-gray-700
-              focus:outline-none focus:text-white focus:bg-gray-700
+              text-gray-500
+              hover:text-white
+              focus:text-white focus:bg-gray-700
             "
             >Reports</a
           >

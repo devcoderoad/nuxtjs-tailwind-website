@@ -39,6 +39,48 @@ body {
   @apply min-h-screen flex justify-center items-center text-center mx-auto text-white;
 }
 
+.nav-info {
+  @apply flex my-4 pt-4 pb-4;
+}
+
+.nav-info:first-child {
+  @apply border-b border-gray-400 pt-0 pb-7 align-middle;
+}
+
+.nav-info nav h4 {
+  @apply font-semibold;
+}
+
+.nav-info ul {
+  @apply font-medium;
+}
+
+.nav-info ul li {
+  @apply pt-3;
+}
+
+/* .nav-info ul li a {
+  @apply text-gray-300 hover:text-gray-400;
+} */
+
+footer {
+  @apply bg-gray-500 text-white;
+}
+
+footer a {
+  @apply text-gray-300 hover:text-gray-400 hover:underline capitalize font-bold text-sm;
+}
+
+select.color-mode {
+  @apply text-gray-700;
+}
+
+/* dark modes */
+
+.dark-mode footer {
+  @apply bg-gray-800;
+}
+
 /* themes */
 
 .btn {
