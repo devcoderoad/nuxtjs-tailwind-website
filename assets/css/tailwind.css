@@ -72,7 +72,15 @@ footer a {
 }
 
 select.color-mode {
-  @apply text-gray-700;
+  @apply text-gray-700 active:border-0 focus:outline-none outline-none;
+}
+
+select.color-mode option {
+  @apply active:border-transparent focus:border-transparent border-0;
+}
+
+select.color-mode option[selected] {
+  @apply border-transparent;
 }
 
 /* dark modes */
