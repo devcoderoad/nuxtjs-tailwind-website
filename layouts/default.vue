@@ -5,7 +5,7 @@
       :class-menu="classMenu"
       @scroll="handleScroll"
     />
-    <main class="wrapper">
+    <main class="wrapper theme">
       <Nuxt />
     </main>
     <Footer ref="scrollToMe" />

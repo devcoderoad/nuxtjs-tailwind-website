@@ -1,0 +1,63 @@
+/* theme */
+
+@layer components {
+  /* wrapper */
+  .wrapper {
+    padding-top: -64px;
+  }
+
+  /* img-fluid */
+  .img-fluid {
+    @apply w-full;
+  }
+
+  /* theme */
+  .theme {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .theme::before {
+    top: 0;
+    right: 0;
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    opacity: 0.5;
+    z-index: -1;
+    border-radius: 50%;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAANklEQVQoU2NkIBIwEqmOgXyFU6dObQDZkp2dDaZhAMVEmCKYJLJi8hSCTCLKanwhQL6vcZkKAMbtEAuAaq67AAAAAElFTkSuQmCC');
+    background-position: top center;
+    background-repeat: repeat;
+    background-attachment: scroll;
+  }
+
+  .theme::after {
+    top: 16rem;
+    right: 1rem;
+    content: '';
+    position: absolute;
+    transform: rotate(-20deg);
+    width: 0;
+    height: 0;
+    opacity: 0.5;
+    z-index: -1;
+    border-top: 25px solid transparent;
+    border-right: 50px solid #cdcdcd;
+    border-bottom: 25px solid transparent;
+  }
+
+  /* dark modes */
+  .dark-mode footer {
+    @apply bg-gray-800;
+  }
+
+  .dark-mode .theme-form {
+    @apply bg-gray-800;
+  }
+
+  .dark-mode .boxed-bottom-content {
+    @apply bg-gray-800;
+  }
+}

@@ -1,0 +1,66 @@
+/* button */
+
+@layer components {
+  .btn {
+    @apply text-sm font-light mt-2 px-3 py-1 capitalize text-gray-400 hover:text-gray-700 focus:to-gray-900 hover:border-gray-700;
+  }
+
+  .btn-xs {
+    @apply text-xs px-2;
+  }
+
+  .btn-lg {
+    @apply text-lg px-5 uppercase;
+  }
+
+  .btn-outline {
+    @apply border border-gray-400;
+  }
+
+  .btn-rounded {
+    @apply rounded-full;
+  }
+
+  .btn-default {
+    font-size: 1rem;
+  }
+
+  .btn-muted {
+    @apply bg-gray-100;
+  }
+
+  .btn-hidden .links,
+  .btn-hidden span {
+    transition: left 0.2s ease-out;
+    display: inline;
+    position: relative;
+    left: -10px;
+    margin-left: 0.1rem;
+  }
+
+  .btn-hidden .links i,
+  .btn-hidden span i {
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.25s ease-out, opacity 0.25s ease-out,
+      visibility 0.25s ease-out;
+    transform: translateX(-5px);
+  }
+
+  .btn-hidden:hover .links,
+  .btn-hidden:hover span {
+    transform: translateX(0);
+    left: 0;
+  }
+
+  .btn-hidden:hover .links i,
+  .btn-hidden:hover span i {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .box-shadow-img {
+    box-shadow: 5px 5px 0 #d3d3d3;
+  }
+}

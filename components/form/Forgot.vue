@@ -1,6 +1,6 @@
 <template>
   <section class="container mx-auto">
-    <h1 class="text-4xl">Input your email</h1>
+    <h1 class="text-4xl font-extrabold">Input your email</h1>
     <form class="grid grid-flow-row">
       <div class="col-auto">
         <label for="form-name"

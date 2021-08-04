@@ -1,6 +1,7 @@
-import { I18N } from './config'
-
-// const isProd = process.env.NODE_ENV !== 'development'
+import {
+  // PRODUCTION,
+  I18N
+} from './config'
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -38,7 +39,9 @@ export default {
     // https://color-mode.nuxtjs.org/#setup
     '@nuxtjs/color-mode',
     // Doc: https://github.com/nuxt-community/date-fns-moduleWith
-    '@nuxtjs/date-fns'
+    '@nuxtjs/date-fns',
+    // Doc: https://github.com/nuxt-community/fontawesome-module or https://github.com/FortAwesome/vue-fontawesome
+    '@nuxtjs/fontawesome'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -120,7 +123,20 @@ export default {
         routes.push(`/article/tag/${tag.name.replace(' ', '_')}`)
       }
 
-      return routes.sort()
+      // return routes.sort()
+      return routes
+    },
+
+    fallback: true // fallback to 404 page not found file
+  },
+
+  // Fontawesome
+  fontawesome: {
+    // suffix: true,
+    icons: {
+      solid: true,
+      brands: true
+      // light: true
     }
   }
 }

@@ -1,0 +1,50 @@
+/* forms */
+
+@layer components {
+  form {
+    @apply my-4;
+  }
+
+  input,
+  textarea {
+    @apply text-gray-400 border border-gray-400 px-2 py-1 focus:text-gray-500 hover:border-gray-700;
+  }
+
+  label {
+    @apply inline-block my-2;
+  }
+
+  select.color-mode {
+    @apply text-gray-700 active:border-0 focus:outline-none outline-none;
+  }
+
+  select.color-mode option {
+    @apply active:border-transparent focus:border-transparent border-0;
+  }
+
+  select.color-mode option[selected] {
+    @apply border-transparent;
+  }
+
+  .theme-form {
+    z-index: 1;
+    @apply relative grid grid-flow-row bg-gray-100 w-1/2 px-6 py-6 overflow-hidden;
+  }
+
+  .theme-form::before {
+    content: ' ';
+    position: absolute;
+    right: -10%;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 640px;
+    transform: rotate(-50deg);
+    height: 180px;
+    opacity: 0.45;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAANklEQVQoU2NkIBIwEqmOgXyFU6dObQDZkp2dDaZhAMVEmCKYJLJi8hSCTCLKanwhQL6vcZkKAMbtEAuAaq67AAAAAElFTkSuQmCC');
+    background-position: top center;
+    background-repeat: repeat;
+    background-attachment: scroll;
+  }
+}

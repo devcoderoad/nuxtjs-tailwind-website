@@ -1,7 +1,7 @@
 ---
 title: Services from CodeRoad
 description: A Nuxt.js project that you can use for personal website or blogging
-img: https://images.unsplash.com/photo-1580752300992-559f8e0734e0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80
+img: https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2990&q=80
 alt: nice image
 author:
   name: CodeRoad

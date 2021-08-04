@@ -3,7 +3,10 @@ const BASE_URL =
     ? 'http://localhost:3000'
     : 'https://dykraf.com'
 
+const PRODUCTION = process.env.NODE_ENV !== 'development'
+
 module.exports = {
+  PRODUCTION,
   BASE_URL,
   GOOGLE_ANALYTICS_ID: 'UA-123722350-1',
   NAME: 'Dykraf',

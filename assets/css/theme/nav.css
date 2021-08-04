@@ -1,0 +1,27 @@
+/* navs */
+
+@layer components {
+  .nav-info {
+    @apply md:flex mt-4 pt-4 pb-4 align-middle first:border-b first:border-gray-400 first:pt-0 first:pb-7;
+  }
+
+  .nav-info nav h4 {
+    @apply font-semibold;
+  }
+
+  .nav-info ul {
+    @apply font-medium mt-1;
+  }
+
+  .nav-info ul li {
+    @apply pt-2;
+  }
+
+  /* .nav-info ul li a {
+  @apply text-gray-300 hover:text-gray-400;
+  } */
+
+  /* .nav-info ul li a {
+    @apply block;
+  } */
+}

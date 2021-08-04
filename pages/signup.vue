@@ -1,5 +1,5 @@
 <template>
-  <div class="py-24">
+  <div class="page-content py-24">
     <Form-SignUp />
   </div>
 </template>

@@ -1,15 +1,19 @@
 <template>
-  <div class="lg:container mx-auto">
+  <div class="page-content container mx-auto pb-12 pt-24">
+    <MetaHead
+      :title="page.title"
+      :description="page.description"
+      :image="page.image"
+    />
     <div class="grid grid-cols-1">
       <div
         class="
-          h-screen
+          h-96
           relative
           overflow-hidden
           col-start-1
           row-start-1
           px-4
-          pt-40
           pb-3
           bg-gradient-to-t
           from-black
@@ -18,9 +22,19 @@
         <img
           :alt="page.title"
           :src="page.img"
-          class="absolute w-full top-0 bottom-0 left-0 right-0 z-0 object-cover"
+          class="
+            absolute
+            w-full
+            top-0
+            bottom-0
+            left-0
+            right-0
+            -z-1
+            object-cover
+            h-96
+          "
         />
-        <div class="relative z-1">
+        <div class="relative z-1 pt-3">
           <p class="text-lg font-medium text-white">Entire House</p>
           <h1 class="text-6xl font-semibold text-white">
             {{ page.title }}
@@ -44,11 +58,29 @@
 
 <script>
 export default {
-  async asyncData({ $content, params }) {
-    const page = await $content('pages', params.slug).fetch()
+  async asyncData({ $content, params, error }) {
+    let page = []
+
+    try {
+      page = await $content('pages', params.slug).fetch()
+    } catch (err) {
+      error(err)
+    }
 
     return {
       page
+    }
+  },
+  head() {
+    return {
+      title: `${this.page.title} | Dykraf.com`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `${this.page.description} | Dykraf.com`
+        }
+      ]
     }
   }
 }

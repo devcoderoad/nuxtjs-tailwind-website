@@ -2,25 +2,48 @@
   <footer class="py-3">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="nav-info">
-        <div class="flex-1">
-          <NuxtLink to="/">
-            <img
-              class="h-8 w-8"
-              src="https://tailwindui.com/img/logos/workflow-mark-indigo-400.svg"
-              alt="Logo"
-            />
-          </NuxtLink>
+        <div class="md:flex-1 flex-auto self-center">
+          <div class="flex flex-wrap items-center">
+            <NuxtLink to="/" class="mr-2 text-gray-300 hover:text-gray-400">
+              <img
+                class="h-8 w-8"
+                src="https://tailwindui.com/img/logos/workflow-mark-indigo-400.svg"
+                alt="Logo"
+              />
+            </NuxtLink>
+            <NuxtLink
+              to="/signin"
+              class="mr-2 text-gray-300 hover:text-gray-400"
+              >Sign In</NuxtLink
+            >
+            |
+            <NuxtLink
+              to="/signup"
+              class="ml-2 text-gray-300 hover:text-gray-400"
+              >Sign Up</NuxtLink
+            >
+          </div>
         </div>
-        <div class="flex-1 text-right">
-          <nav>
-            <a href="#facebook" title="Facebook">Facebook</a>
-            <a href="#twitter" title="Twitter">Twitter</a>
-            <a href="#youtube" title="YouTube">YouTube</a>
+        <!-- <div class="md:flex-1 text-right items-center"> -->
+        <div class="md:flex-1 flex-auto self-center">
+          <nav class="flex flex-row justify-end">
+            <a href="#facebook" title="Facebook" class="w-6">
+              <span class="sr-only">Facebook</span
+              ><font-awesome-icon :icon="['fab', 'facebook']" />
+            </a>
+            <a href="#twitter" title="Twitter" class="w-6">
+              <span class="sr-only">Twitter</span>
+              <font-awesome-icon :icon="['fab', 'twitter']" />
+            </a>
+            <a href="#youtube" title="YouTube" class="w-6">
+              <span class="sr-only">YouTube</span>
+              <font-awesome-icon :icon="['fab', 'youtube']" />
+            </a>
           </nav>
         </div>
       </div>
       <div class="nav-info">
-        <nav class="flex-auto">
+        <nav class="md:flex-auto mb-3">
           <h4 class="text-2xl">About Us</h4>
           <ul>
             <li><a href="#about" title="About">About</a></li>
@@ -29,7 +52,7 @@
             <li><a href="#contact" title="Contact">Contact</a></li>
           </ul>
         </nav>
-        <nav class="flex-auto">
+        <nav class="md:flex-auto mb-3">
           <h4 class="text-2xl">Support</h4>
           <ul>
             <li><a href="#Technical" title="Technical">Technical</a></li>
@@ -38,7 +61,7 @@
             <li><a href="#Sponsors" title="Sponsors">Sponsors</a></li>
           </ul>
         </nav>
-        <nav class="flex-auto">
+        <nav class="md:flex-auto mb-3">
           <h4 class="text-2xl">Office</h4>
           <ul>
             <li><a href="#main" title=">Main Office">Main Office</a></li>
@@ -48,7 +71,7 @@
             </li>
           </ul>
         </nav>
-        <nav class="flex-auto">
+        <nav class="md:flex-auto mb-3">
           <h4 class="text-2xl">Resources</h4>
           <ul>
             <li><a href="#pricing" title=">Pricing">Pricing</a></li>

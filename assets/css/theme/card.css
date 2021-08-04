@@ -1,0 +1,49 @@
+/* cards */
+
+@layer components {
+  /* .boxed */
+  .boxed {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    @apply flex relative;
+  }
+
+  .boxed-bottom {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    @apply flex flex-wrap h-auto;
+  }
+
+  .boxed-bottom-content::before {
+    content: ' ';
+    position: absolute;
+    right: -10%;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 640px;
+    transform: rotate(-50deg);
+    height: 180px;
+    opacity: 0.45;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAANklEQVQoU2NkIBIwEqmOgXyFU6dObQDZkp2dDaZhAMVEmCKYJLJi8hSCTCLKanwhQL6vcZkKAMbtEAuAaq67AAAAAElFTkSuQmCC');
+    background-position: top center;
+    background-repeat: repeat;
+    background-attachment: scroll;
+  }
+
+  .boxed-bottom-content {
+    /* background-color: rgba(238, 238, 238, 1); */
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 1.75rem;
+    z-index: 1;
+    @apply relative bg-gray-100 rounded-xl;
+  }
+
+  .boxed-bottom__left,
+  .boxed-bottom__right {
+    margin-bottom: 1rem;
+    @apply flex xl:w-2/6 lg:w-2/6 md:w-1/2 col-auto h-auto relative overflow-hidden px-4;
+  }
+}

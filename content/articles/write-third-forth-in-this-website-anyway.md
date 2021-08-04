@@ -1,5 +1,5 @@
 ---
-title: About CodeRoad
+title: At vero eos et accusamus et iusto odio dignissimos
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 img: https://images.unsplash.com/photo-1580752300992-559f8e0734e0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80
 alt: nice image
@@ -9,7 +9,6 @@ author:
   img: ../img/logo.jpg
 tags:
   - web development
-  - vuejs
 createdAt: 20-May-2021 00:05
 updatedAt: 01-June-2021 20:30
 status: publish

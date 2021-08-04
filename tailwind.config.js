@@ -8,12 +8,16 @@ module.exports = {
     'content/**/**.md'
   ],
   theme: {
-    darkSelector: '.dark-mode'
-    // extend: {
-    //   fontFamily:{
-    //     lora: ''
-    //   }
-    // },
+    darkSelector: '.dark-mode',
+    extend: {
+      // fontFamily: {
+      //   lora: ''
+      // },
+      zIndex: {
+        '-1': '-1',
+        '-10': '-10'
+      }
+    }
   },
   variants: {
     backgroundColor: [

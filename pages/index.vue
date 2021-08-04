@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <Header />
-    <CardsArticleHeadline :items="articleHeadlines" />
+  <div class="page-content">
+    <!-- <Header /> -->
+    <CardsArticleHeadline :items="articleHeadline" />
     <CardsArticle :items="articles" />
   </div>
 </template>
@@ -9,17 +9,27 @@
 <script>
 export default {
   async asyncData({ $content }) {
-    const articles = await $content('articles')
-      .where({ headline: { $ne: true } })
-      .limit(10)
-      .fetch()
-    const articleHeadlines = await $content('articles')
-      .where({ headline: true })
-      .limit(4)
-      .fetch()
+    let articles = []
+    let articleHeadline = []
+    let error = null
+
+    try {
+      articles = await $content('articles')
+        .where({ headline: { $ne: true } })
+        .limit(10)
+        .fetch()
+      articleHeadline = await $content('articles')
+        .where({ headline: true })
+        .limit(4)
+        .fetch()
+    } catch (err) {
+      error = err
+    }
+
     return {
       articles,
-      articleHeadlines
+      articleHeadline,
+      error
     }
   }
 }

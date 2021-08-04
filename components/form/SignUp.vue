@@ -1,7 +1,7 @@
 <template>
-  <section class="container mx-auto">
-    <h1 class="text-4xl">Sign Up</h1>
-    <form class="grid grid-flow-row">
+  <section class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <h1 class="text-4xl font-extrabold">Sign up your account</h1>
+    <form class="theme-form">
       <div class="col-auto">
         <label for="form-name"
           >Name:
@@ -39,7 +39,19 @@
         </label>
       </div>
       <div class="col-auto">
-        <button class="btn btn-lg btn-outline">Sign Up</button>
+        <button class="btn btn-lg btn-outline btn-muted">Sign Up</button>
+        <Nuxt-Link
+          to="/signin"
+          class="
+            underline
+            hover:no-underline
+            lg:ml-4
+            block
+            lg:inline-block
+            text-gray-600
+          "
+          >Login</Nuxt-Link
+        >
       </div>
     </form>
   </section>
