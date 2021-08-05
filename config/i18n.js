@@ -36,8 +36,8 @@ export default {
       en: '/article/author/:slug?'
     },
     'article-tag': {
-      id: '/article/tag/:slug',
-      en: '/article/tag/:slug'
+      id: '/article/tag/:slug?',
+      en: '/article/tag/:slug?'
     }
     // 'dynamicNested/_category': {
     //   fr: 'imbrication-dynamique/:category'

@@ -7,6 +7,29 @@
         class="boxed-bottom__right"
       >
         <div class="boxed-bottom-content" :rel="`card-${index}`">
+          <Nuxt-Link
+            :to="
+              localePath({
+                name: 'article-slug',
+                params: { slug: item.slug }
+              })
+            "
+          >
+            <img
+              :src="item.img"
+              :alt="item.title"
+              class="
+                rounded-xl
+                img-fluid
+                box-shadow-img
+                mb-3
+                w-full
+                object-cover
+                h-44
+              "
+            />
+          </Nuxt-Link>
+
           <h4 class="headline text-muted">
             <Nuxt-Link
               :to="
@@ -38,32 +61,12 @@
             <div class="flex-1">
               <span class="float-right text-muted">
                 <font-awesome-icon :icon="['fa', 'user']" />
-                {{ item.author.name }}
+                <Nuxt-Link :to="`/article/author/${item.author.name}`">
+                  {{ item.author.name }}</Nuxt-Link
+                >
               </span>
             </div>
           </div>
-          <Nuxt-Link
-            :to="
-              localePath({
-                name: 'article-slug',
-                params: { slug: item.slug }
-              })
-            "
-          >
-            <img
-              :src="item.img"
-              :alt="item.title"
-              class="
-                rounded-xl
-                img-fluid
-                box-shadow-img
-                mb-3
-                w-full
-                object-cover
-                h-44
-              "
-            />
-          </Nuxt-Link>
           <p class="text-justify my-3 text-sm">
             {{ item.description.slice(0, 90) }}...
           </p>
@@ -72,14 +75,15 @@
               <font-awesome-icon :icon="['fa', 'tags']" />
             </span>
             <span v-for="(tag, i) in item.tags" :key="i" class="capitalize">
-              <Nuxt-Link
+              <!-- <Nuxt-Link
                 :to="
                   localePath({
                     name: 'article-tag',
-                    params: { slug: tag }
+                    params: { tag: tag }
                   })
                 "
-              >
+              > -->
+              <Nuxt-Link :to="`/article/tag/${tag.replace(' ', '_')}`">
                 {{ tag }}</Nuxt-Link
               >{{
                 item.tags.length !== 1 && item.tags.length !== i + 1 ? ',' : ''
