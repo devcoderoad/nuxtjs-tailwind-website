@@ -17,12 +17,3 @@ export default {
   }
 }
 </script>
-
-<style lang="postcss">
-.nuxt-link-exact-active.nuxt-link-active {
-  @apply text-red-600;
-}
-footer {
-  @apply text-sm;
-}
-</style>

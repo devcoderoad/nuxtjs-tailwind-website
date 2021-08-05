@@ -1,58 +1,5 @@
 <template>
   <section class="lg:container mx-auto pb-4">
-    <!-- <h1 class="text-2xl">Headlines</h1> -->
-    <!-- <article v-if="items && items.length">
-      <div v-for="item in items" :key="item.slug" class="row">
-        <Nuxt-Link
-          :to="
-            localePath({ name: 'article-slug', params: { slug: item.slug } })
-          "
-          class="col-12 mb-4 shadow-lg hover:shadow-xl"
-        >
-          <figure class="md:flex bg-gray-100 p-8 md:p-0">
-            <img
-              class="
-                w-32
-                h-32
-                md:w-48 md:h-auto md:rounded-none
-                rounded-full
-                mx-auto
-                bg-gray-200
-                order-2
-              "
-              :src="item.img"
-              :alt="item.title"
-              width="384"
-              height="512"
-            />
-            <div class="pt-6 md:p-8 text-center md:text-left space-y-4 order-1">
-              <h3 class="text-lg font-semibold">
-                {{ item.title }}
-              </h3>
-              <blockquote>
-                <p class="text-md font-normal">
-                  {{ item.description }}
-                </p>
-              </blockquote>
-              <figcaption class="font-medium">
-                <div class="text-cyan-600">
-                  {{ item.author && item.author.name }}
-                </div>
-                <div class="text-gray-500">
-                  Posted:
-                  {{ $dateFns.format(item.createdAt, 'MMMM dd, yyyy') }}
-                </div>
-              </figcaption>
-            </div>
-          </figure>
-        </Nuxt-Link>
-      </div>
-    </article> -->
-
-    <!-- <div
-      v-if="items && items.length"
-      class="container items-center max-w-6xl px-8 mx-auto xl:px-5"
-    > -->
     <div
       v-if="items && items.length"
       class="items-center mx-auto max-w-7xl px-8 xl:px-5"
@@ -152,8 +99,6 @@
                   hover:bg-indigo-700
                   sm:w-auto
                 "
-                data-primary="indigo-600"
-                data-rounded="rounded-md"
               >
                 Read More
                 <svg
@@ -170,27 +115,6 @@
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
               </Nuxt-Link>
-              <!-- <Nuxt-Link
-                :to="
-                  localePath({
-                    name: 'article-slug',
-                    params: { slug: item.slug }
-                  })
-                "
-                class="
-                  flex
-                  items-center
-                  px-6
-                  py-3
-                  text-gray-500
-                  bg-gray-100
-                  rounded-md
-                  hover:bg-gray-200 hover:text-gray-600
-                "
-                data-rounded="rounded-md"
-              >
-                Learn More
-              </Nuxt-Link> -->
             </div>
           </div>
         </div>
@@ -204,8 +128,6 @@
               shadow-xl
               sm:rounded-xl
             "
-            data-rounded="rounded-xl"
-            data-rounded-max="rounded-full"
           >
             <Nuxt-Link
               :to="

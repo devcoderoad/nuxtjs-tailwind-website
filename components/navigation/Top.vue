@@ -346,34 +346,3 @@ export default {
   }
 }
 </script>
-
-<style lang="postcss">
-.dark-mode body nav:not(.bg-gradient-to-b) {
-  @apply bg-gray-800;
-}
-
-.dark-mode body {
-  background-color: #091a28;
-  color: #ebf4f1;
-}
-
-.dark-mode body blockquote,
-.dark-mode body figcaption {
-  @apply text-gray-800;
-}
-
-.sepia-mode body {
-  background-color: #f1e7d0;
-  color: #433422;
-}
-
-.navigation-top {
-  animation: 1s appear;
-
-  /* @apply fixed left-0 right-0; */
-}
-
-.dark-mode .color-mode option {
-  @apply text-gray-900;
-}
-</style>

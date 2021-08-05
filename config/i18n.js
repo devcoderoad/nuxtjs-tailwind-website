@@ -23,18 +23,6 @@ export default {
   ],
   defaultLocale: LANG,
   routes: {
-    // about: {
-    //   id: '/tentang-kami',
-    //   en: '/about-us'
-    // },
-    // contact: {
-    //   id: '/kontak',
-    //   en: '/contact'
-    // },
-    // blogs: {
-    //   id: '/artikel',
-    //   en: '/blog'
-    // },
     'page-slug': {
       id: '/page/:slug?',
       en: '/page/:slug?'

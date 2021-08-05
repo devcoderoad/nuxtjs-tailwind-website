@@ -3,9 +3,9 @@
 @layer components {
   /* wrapper */
 
-  /* .wrapper { 
-  padding-top: -64px;
-  } */
+  .wrapper {
+    @apply py-0;
+  }
 
   /* img-fluid */
   .img-fluid {
@@ -14,8 +14,7 @@
 
   /* theme */
   .theme {
-    position: relative;
-    overflow: hidden;
+    @apply overflow-hidden relative;
   }
 
   .theme::before {
@@ -50,6 +49,7 @@
   }
 
   /* dark modes */
+
   .dark-mode footer {
     @apply bg-gray-800;
   }
@@ -60,5 +60,34 @@
 
   .dark-mode .boxed-bottom-content {
     @apply bg-gray-800;
+  }
+
+  .dark-mode body nav:not(.bg-gradient-to-b) {
+    @apply bg-gray-800;
+  }
+
+  .dark-mode body {
+    background-color: #091a28;
+    color: #ebf4f1;
+  }
+
+  .dark-mode body blockquote,
+  .dark-mode body figcaption {
+    @apply text-gray-800;
+  }
+
+  .dark-mode .color-mode option {
+    @apply text-gray-900;
+  }
+
+  /* sepia modes */
+
+  .sepia-mode body {
+    background-color: #f1e7d0;
+    color: #433422;
+  }
+
+  .nuxt-link-exact-active.nuxt-link-active {
+    @apply text-red-600;
   }
 }

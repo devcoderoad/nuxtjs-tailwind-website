@@ -1,6 +1,15 @@
 /* navs */
 
 @layer components {
+  /* .navigation-top {
+    animation: 1s appear;
+    @apply fixed left-0 right-0;
+  } */
+
+  .navigation-top {
+    animation: 1s appear;
+  }
+
   .nav-info {
     @apply md:flex mt-4 pt-4 pb-4 align-middle first:border-b first:border-gray-400 first:pt-0 first:pb-7;
   }
@@ -15,6 +24,14 @@
 
   .nav-info ul li {
     @apply pt-2;
+  }
+
+  .nav-content {
+    @apply md:flex-1 flex-auto self-center;
+  }
+
+  .nav-link {
+    @apply md:flex-auto mb-3;
   }
 
   /* .nav-info ul li a {

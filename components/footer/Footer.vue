@@ -1,8 +1,8 @@
 <template>
   <footer class="py-3">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-sm">
       <div class="nav-info">
-        <div class="md:flex-1 flex-auto self-center">
+        <div class="nav-content">
           <div class="flex flex-wrap items-center">
             <NuxtLink to="/" class="mr-2 text-gray-300 hover:text-gray-400">
               <img
@@ -24,8 +24,7 @@
             >
           </div>
         </div>
-        <!-- <div class="md:flex-1 text-right items-center"> -->
-        <div class="md:flex-1 flex-auto self-center">
+        <div class="nav-content">
           <nav class="flex flex-row justify-end">
             <a href="#facebook" title="Facebook" class="w-6">
               <span class="sr-only">Facebook</span
@@ -43,7 +42,7 @@
         </div>
       </div>
       <div class="nav-info">
-        <nav class="md:flex-auto mb-3">
+        <nav class="nav-link">
           <h4 class="text-2xl">About Us</h4>
           <ul>
             <li><a href="#about" title="About">About</a></li>
@@ -52,7 +51,7 @@
             <li><a href="#contact" title="Contact">Contact</a></li>
           </ul>
         </nav>
-        <nav class="md:flex-auto mb-3">
+        <nav class="nav-link">
           <h4 class="text-2xl">Support</h4>
           <ul>
             <li><a href="#Technical" title="Technical">Technical</a></li>
@@ -61,7 +60,7 @@
             <li><a href="#Sponsors" title="Sponsors">Sponsors</a></li>
           </ul>
         </nav>
-        <nav class="md:flex-auto mb-3">
+        <nav class="nav-link">
           <h4 class="text-2xl">Office</h4>
           <ul>
             <li><a href="#main" title=">Main Office">Main Office</a></li>
@@ -71,7 +70,7 @@
             </li>
           </ul>
         </nav>
-        <nav class="md:flex-auto mb-3">
+        <nav class="nav-link">
           <h4 class="text-2xl">Resources</h4>
           <ul>
             <li><a href="#pricing" title=">Pricing">Pricing</a></li>
