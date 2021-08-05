@@ -2,7 +2,7 @@
 
 @layer components {
   .page-content {
-    @apply relative;
+    @apply relative py-12 lg:container mx-auto;
   }
 
   .page-content::before,

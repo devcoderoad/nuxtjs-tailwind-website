@@ -26,7 +26,8 @@
     <div class="absolute top-32 left-32 right-32 text-white">
       <div class="flex flex-row justify-between w-full">
         <div class="xs:w-1/1 md:w-1/4 justify-between">
-          <NuxtLink to="/"><Logo :amp="$isAMP" /></NuxtLink>
+          <!-- <NuxtLink to="/"><Logo :amp="$isAMP" /></NuxtLink> -->
+          <NuxtLink to="/"><Logo /></NuxtLink>
         </div>
         <div class="xs:w-full md:w-3/4 flex flex-row">
           <NuxtLink
@@ -90,11 +91,13 @@
               hover:shadow-xl
               xxlmax:flex-col
               article-card
+              overflow-hidden
+              rounded-lg
             "
           >
             <img
               v-if="article.img"
-              class="h-auto xxlmin:w-1/2 xxlmax:w-full object-cover"
+              class="h-auto w-1/2 object-cover"
               :src="article.img"
               :alt="article.alt"
             />
@@ -106,7 +109,6 @@
                 justify-between
                 xxlmin:w-1/2
                 xxlmax:w-full
-                overflow-hidden
               "
             >
               <h4 class="font-bold">{{ article.title }}</h4>
@@ -124,19 +126,23 @@
 
 <script>
 export default {
-  async asyncData({ $content, params }) {
-    const tags = await $content('tags')
-      .where({ slug: { $contains: params.tag } })
-      .limit(1)
-      .fetch()
-    const tag = tags.length > 0 ? tags[0] : {}
-    const articles = await $content('articles', params.slug)
-      .where({ tags: { $contains: tag.name }, offLink: false })
-      .sortBy('createdAt', 'asc')
-      .fetch()
-    return {
-      articles,
-      tag
+  async asyncData({ $content, params, error }) {
+    try {
+      const tags = await $content('tags')
+        .where({ slug: { $contains: params.tag } })
+        .limit(1)
+        .fetch()
+      const tag = tags.length > 0 ? tags[0] : {}
+      const articles = await $content('articles', params.slug)
+        .where({ tags: { $contains: tag.name }, status: 'publish' })
+        .sortBy('createdAt', 'asc')
+        .fetch()
+      return {
+        articles,
+        tag
+      }
+    } catch (err) {
+      error(err)
     }
   }
 }

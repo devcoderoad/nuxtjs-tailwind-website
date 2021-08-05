@@ -85,6 +85,7 @@ export default {
   generate: {
     routes: async () => {
       const routes = []
+      const authors = []
       let pages = []
       let articles = []
       let tags = []
@@ -96,7 +97,7 @@ export default {
         pages = await $content('pages').where({ showInMenu: true }).fetch()
       }
 
-      /* Posts */
+      /* Articles */
       if (articles === null || articles.length === 0) {
         articles = await $content('articles')
           .where({ status: 'publish' })
@@ -108,23 +109,31 @@ export default {
         routes.push(`/page/${page.slug}`)
       }
 
-      /* Posts */
+      /* Articles */
       for (const article of articles) {
+        authors.push(article.author.name)
         routes.push(`/article/${article.slug}`)
       }
 
-      /* Post Tags */
+      /* Articles Authors */
+      for (const author of authors.filter(function (item, index, inputArray) {
+        return inputArray.indexOf(item) === index
+      })) {
+        routes.push(`/article/author/${author}`)
+      }
+
+      /* Article Tags */
       if (tags === null || tags.length === 0) {
         tags = await $content('tags').fetch()
       }
 
-      /* Post Tags */
+      /* Articles Tags */
       for (const tag of tags) {
         routes.push(`/article/tag/${tag.name.replace(' ', '_')}`)
       }
 
-      // return routes.sort()
-      return routes
+      return routes.sort()
+      // return routes
     },
 
     fallback: true // fallback to 404 page not found file

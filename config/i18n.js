@@ -7,7 +7,8 @@ export default {
   baseUrl: BASE_URL,
   // strategy: 'prefix_and_default',
   // strategy: 'no_prefix',
-  strategy: 'prefix_except_default',
+  // strategy: 'prefix_except_default',
+  strategy: 'no_prefix',
   locales: [
     {
       code: 'en',
@@ -34,7 +35,6 @@ export default {
     //   id: '/artikel',
     //   en: '/blog'
     // },
-
     'page-slug': {
       id: '/page/:slug?',
       en: '/page/:slug?'
@@ -42,6 +42,14 @@ export default {
     'article-slug': {
       id: '/article/:slug?',
       en: '/article/:slug?'
+    },
+    'article-author': {
+      id: '/article/author/:slug?',
+      en: '/article/author/:slug?'
+    },
+    'article-tag': {
+      id: '/article/tag/:slug',
+      en: '/article/tag/:slug'
     }
     // 'dynamicNested/_category': {
     //   fr: 'imbrication-dynamique/:category'

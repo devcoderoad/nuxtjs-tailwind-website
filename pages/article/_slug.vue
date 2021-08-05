@@ -1,5 +1,5 @@
 <template>
-  <div class="page-content pt-24 min-h-screen h-full">
+  <div class="page-content min-h-screen h-full">
     <MetaHead
       :title="article.title"
       :description="article.description"
@@ -9,7 +9,21 @@
       <div class="col-start-1 row-start-3 space-y-3 px-4">
         <h1 class="text-4xl font-black">{{ article.title }}</h1>
         <div class="my-4">
-          <span>Author: {{ article.author.name }}</span> |
+          <span
+            >Author:
+            <Nuxt-Link :to="`/article/author/${article.author.name}`">
+              <!-- <Nuxt-Link
+              :to="
+                localePath({
+                  name: 'article-author',
+                  params: { slug: article.slug, author: article.author.name }
+                })
+              "
+            > -->
+              {{ article.author.name }}</Nuxt-Link
+            ></span
+          >
+          |
           <span>
             {{ $dateFns.format(article.createdAt, 'MMMM dd, yyyy') }}</span
           >
@@ -48,7 +62,7 @@ export default {
       const readAlso = await $content('articles')
         .only(['title', 'slug'])
         .where({
-          offLink: false,
+          status: 'publish',
           slug: { $ne: params.slug },
           tags: { $containsAny: Object.keys(tags) }
         })
@@ -57,7 +71,7 @@ export default {
         .fetch()
 
       const [prev, next] = await $content('articles')
-        .where({ offLink: false })
+        .where({ status: 'publish' })
         .only(['title', 'slug'])
         .sortBy('createdAt', 'asc')
         .surround(params.slug)

@@ -1,5 +1,5 @@
 <template>
-  <div class="page-content container mx-auto pb-12 pt-24">
+  <div class="page-content min-h-screen h-full">
     <MetaHead
       :title="page.title"
       :description="page.description"

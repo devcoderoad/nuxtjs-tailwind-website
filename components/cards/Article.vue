@@ -135,8 +135,17 @@
               <font-awesome-icon :icon="['fa', 'tags']" />
             </span>
             <span v-for="(tag, i) in item.tags" :key="i" class="capitalize">
-              {{ tag
-              }}{{
+              <!-- <Nuxt-Link
+                :to="
+                  localePath({
+                    name: 'article-tag',
+                    params: { slug: tag }
+                  })
+                "
+                > -->
+              <Nuxt-Link :to="`/article/tag/${tag.replace(' ', '_')}`">
+                {{ tag }}</Nuxt-Link
+              >{{
                 item.tags.length !== 1 && item.tags.length !== i + 1 ? ',' : ''
               }}
             </span>

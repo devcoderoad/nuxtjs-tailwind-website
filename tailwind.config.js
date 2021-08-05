@@ -16,6 +16,19 @@ module.exports = {
       zIndex: {
         '-1': '-1',
         '-10': '-10'
+      },
+      colors: {
+        brand: {
+          DEFAULT: '#f2f',
+          light: '#ccc',
+          dark: '#bbb'
+        },
+        primary: '#990',
+        secondary: '#990',
+        success: '#990',
+        warning: '#990',
+        info: '#990',
+        danger: '#990'
       }
     }
   },

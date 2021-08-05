@@ -2,9 +2,10 @@
 
 @layer components {
   /* wrapper */
-  .wrapper {
-    padding-top: -64px;
-  }
+
+  /* .wrapper { 
+  padding-top: -64px;
+  } */
 
   /* img-fluid */
   .img-fluid {

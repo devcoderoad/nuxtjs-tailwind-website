@@ -16,7 +16,7 @@
       :image="articles[0].author.img"
     />
     <div class="relative lg:w-1/2 xs:w-full xs:h-84 lg:h-full post-left">
-      <amp-img
+      <!-- <amp-img
         v-if="$isAMP"
         :src="articles[0].author.img"
         :alt="articles[0].author.name"
@@ -30,13 +30,19 @@
         :src="articles[0].author.img"
         :alt="articles[0].author.name"
         class="absolute h-full w-full object-cover"
+      /> -->
+      <img
+        :src="articles[0].author.img"
+        :alt="articles[0].author.name"
+        class="absolute h-full w-full object-cover"
       />
     </div>
 
     <div class="overlay"></div>
     <div class="absolute top-32 left-32 text-white">
       <div class="relative">
-        <NuxtLink to="/"><Logo :amp="$isAMP" /></NuxtLink>
+        <!-- <NuxtLink to="/"><Logo :amp="$isAMP" /></NuxtLink> -->
+        <NuxtLink to="/"><Logo /></NuxtLink>
       </div>
       <div class="mt-16 -mb-3 flex flex-col uppercase text-sm">
         <h1 class="text-4xl font-bold">
@@ -114,19 +120,23 @@
 
 <script>
 export default {
-  async asyncData({ $content, params }) {
-    const articles = await $content('articles', params.slug)
-      .where({
-        'author.name': {
-          $regex: [params.author, 'i']
-        },
-        offLink: false
-      })
-      .without('body')
-      .sortBy('createdAt', 'asc')
-      .fetch()
-    return {
-      articles
+  async asyncData({ $content, params, error }) {
+    try {
+      const articles = await $content('articles')
+        .where({
+          'author.name': {
+            $regex: [params.slug, 'i']
+          },
+          status: 'publish'
+        })
+        .without('body')
+        .sortBy('createdAt', 'asc')
+        .fetch()
+      return {
+        articles
+      }
+    } catch (err) {
+      error(err)
     }
   }
 }
