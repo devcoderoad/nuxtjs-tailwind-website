@@ -6,7 +6,7 @@
         :key="item.slug"
         class="boxed-bottom__right"
       >
-        <div class="boxed-bottom-content" :rel="`card-${index}`">
+        <div class="boxed-bottom-content xl:space-y-6" :rel="`card-${index}`">
           <Nuxt-Link
             :to="
               localePath({
@@ -22,7 +22,6 @@
                 rounded-xl
                 img-fluid
                 box-shadow-img
-                mb-3
                 w-full
                 object-cover
                 h-44
@@ -30,7 +29,7 @@
             />
           </Nuxt-Link>
 
-          <h4 class="headline text-muted">
+          <h4 class="headline text-muted leading-tight">
             <Nuxt-Link
               :to="
                 localePath({
@@ -41,22 +40,10 @@
               >{{ item.title }}</Nuxt-Link
             >
           </h4>
-          <div class="flex flex-row mb-2 my-2 text-sm text-gray-500">
-            <!-- {{ item.tags && item.tags.length && item.tags.map(tag=><font-awesome-icon :icon="['fas', 'user']" />) }} -->
+          <!-- <div class="flex flex-row my-3 text-sm text-gray-500">
             <div class="flex-1">
               <font-awesome-icon :icon="['fa', 'clock']" />
               {{ $dateFns.format(item.createdAt, 'MMMM dd, yyyy') }}
-              <!-- <span>
-                <font-awesome-icon :icon="['fa', 'tags']" />
-              </span>
-              <span v-for="(tag, i) in item.tags" :key="i" class="capitalize">
-                {{ tag
-                }}{{
-                  item.tags.length !== 1 && item.tags.length !== i + 1
-                    ? ','
-                    : ''
-                }}
-              </span> -->
             </div>
             <div class="flex-1">
               <span class="float-right text-muted">
@@ -66,47 +53,38 @@
                 >
               </span>
             </div>
-          </div>
-          <p class="text-justify my-3 text-sm">
+          </div> -->
+          <p class="text-justify text-sm">
             {{ item.description.slice(0, 90) }}...
           </p>
-          <div class="text-sm text-gray-500 mt-2 mb-4">
+          <!-- <div class="text-sm text-gray-500 mt-2 mb-4">
             <span>
               <font-awesome-icon :icon="['fa', 'tags']" />
             </span>
-            <span v-for="(tag, i) in item.tags" :key="i" class="capitalize">
-              <!-- <Nuxt-Link
-                :to="
-                  localePath({
-                    name: 'article-tag',
-                    params: { tag: tag }
-                  })
-                "
-              > -->
+            <span v-for="(tag, i) in item.tags" :key="i" class="capitalize">              
               <Nuxt-Link :to="`/article/tag/${tag.replace(' ', '_')}`">
                 {{ tag }}</Nuxt-Link
               >{{
                 item.tags.length !== 1 && item.tags.length !== i + 1 ? ',' : ''
               }}
             </span>
+          </div> -->
+          <div>
+            <Nuxt-Link
+              :to="
+                localePath({
+                  name: 'article-slug',
+                  params: { slug: item.slug }
+                })
+              "
+              class="btn btn-sm btn-default btn-hidden text-muted"
+              ><span class="underline hover:no-underline">read more</span>
+              <span>
+                &rarr;
+                <!-- <font-awesome-icon :icon="['fa', 'arrow-right']"/> -->
+              </span>
+            </Nuxt-Link>
           </div>
-          <Nuxt-Link
-            :to="
-              localePath({
-                name: 'article-slug',
-                params: { slug: item.slug }
-              })
-            "
-            class="
-              btn btn-sm btn-default btn-hidden
-              text-muted
-              border border-gray-400
-              rounded-full
-            "
-            ><span>read more</span>&nbsp;<font-awesome-icon
-              :icon="['fa', 'arrow-right']"
-            />
-          </Nuxt-Link>
         </div>
       </div>
     </div>

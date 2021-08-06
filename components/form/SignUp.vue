@@ -1,7 +1,7 @@
 <template>
   <section class="container mx-auto px-4 sm:px-6 lg:px-8">
     <h1 class="text-4xl font-extrabold">Sign up your account</h1>
-    <form class="theme-form">
+    <form class="default-form">
       <div class="col-auto">
         <label for="form-name"
           >Name:

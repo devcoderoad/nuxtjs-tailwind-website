@@ -87,6 +87,16 @@
     color: #433422;
   }
 
+  /* nuxt-content */
+
+  .nuxt-content h1 {
+    @apply text-xl font-bold my-2;
+  }
+
+  .nuxt-content p {
+    @apply mb-3;
+  }
+
   .nuxt-link-exact-active.nuxt-link-active {
     @apply text-red-600;
   }

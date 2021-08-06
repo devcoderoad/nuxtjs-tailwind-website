@@ -42,7 +42,7 @@
 
   .boxed-bottom__left,
   .boxed-bottom__right {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     @apply flex xl:w-2/6 lg:w-2/6 md:w-1/2 col-auto h-auto relative overflow-hidden px-4;
   }
 }

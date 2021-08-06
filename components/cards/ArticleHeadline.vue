@@ -18,8 +18,8 @@
               sm:max-w-md
               lg:max-w-xl
               md:space-y-4
-              lg:space-y-8
-              xl:space-y-9
+              lg:space-y-7
+              xl:space-y-8
               sm:pr-5
               lg:pr-0
               md:pb-0
@@ -48,7 +48,7 @@
                 mx-auto
                 text-base text-gray-500
                 sm:max-w-md
-                lg:text-xl
+                lg:text-md
                 md:max-w-3xl
                 text-justify
               "

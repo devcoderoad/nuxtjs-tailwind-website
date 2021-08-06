@@ -5,7 +5,7 @@
       :description="page.description"
       :image="page.image"
     />
-    <div class="grid grid-cols-1">
+    <div class="grid grid-cols-1 xl:space-y-6">
       <div
         class="
           h-96
@@ -35,20 +35,20 @@
           "
         />
         <div class="relative z-1 pt-3">
-          <p class="text-lg font-medium text-white">Entire House</p>
-          <h1 class="text-6xl font-semibold text-white">
-            {{ page.title }}
-          </h1>
+          <div class="relative text-shadow">
+            <p class="text-lg font-medium text-white">{{ page.title }}</p>
+            <h1 class="text-3xl font-black text-white">
+              {{ page.description }}
+            </h1>
+          </div>
         </div>
       </div>
 
-      <div class="col-start-1 row-start-2 px-4">
+      <!-- <div class="col-start-1 row-start-2 px-4">
         <div class="flex items-center text-sm font-medium my-5"></div>
-      </div>
+      </div> -->
 
       <div class="col-start-1 row-start-3 space-y-3 px-4">
-        {{ page.description }}
-
         <!-- content from markdown -->
         <nuxt-content :document="page" />
       </div>

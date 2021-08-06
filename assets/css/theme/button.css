@@ -31,10 +31,13 @@
 
   .btn-hidden .links,
   .btn-hidden span {
-    transition: left 0.2s ease-out;
+    /* transition: left 0.2s ease-out; */
+
     display: inline;
     position: relative;
-    left: -10px;
+
+    /* left: -10px; */
+    left: -12px;
     margin-left: 0.1rem;
   }
 
@@ -42,23 +45,29 @@
   .btn-hidden span i {
     opacity: 0;
     visibility: hidden;
-    transition: transform 0.25s ease-out, opacity 0.25s ease-out,
-      visibility 0.25s ease-out;
+
+    /* transition: transform 0.25s ease-out, opacity 0.25s ease-out,
+      visibility 0.25s ease-out; */
+
     transform: translateX(-5px);
   }
 
+  /* 
   .btn-hidden:hover .links,
   .btn-hidden:hover span {
     transform: translateX(0);
-    left: 0;
-  }
+    left: 0; 
+  } 
+  */
 
+  /*
   .btn-hidden:hover .links i,
   .btn-hidden:hover span i {
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
   }
+   */
 
   .box-shadow-img {
     box-shadow: 5px 5px 0 #d3d3d3;

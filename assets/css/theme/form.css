@@ -2,7 +2,7 @@
 
 @layer components {
   form {
-    @apply my-4;
+    @apply my-4 py-8;
   }
 
   input,
@@ -11,7 +11,7 @@
   }
 
   label {
-    @apply inline-block my-2;
+    @apply inline-block;
   }
 
   select.color-mode {
@@ -26,12 +26,12 @@
     @apply border-transparent;
   }
 
-  .theme-form {
+  .default-form {
     z-index: 1;
-    @apply relative grid grid-flow-row bg-gray-100 w-1/2 px-6 py-6 overflow-hidden;
+    @apply relative grid grid-flow-row bg-gray-100 w-1/2 px-6 overflow-hidden xl:space-y-6;
   }
 
-  .theme-form::before {
+  .default-form::before {
     content: ' ';
     position: absolute;
     right: -10%;
