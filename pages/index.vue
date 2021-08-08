@@ -3,15 +3,16 @@
     <!-- <Header /> -->
     <CardsArticleHeadline :items="articleHeadline" />
     <CardsArticle :items="articles" />
+    <Topics :items="tags" />
   </div>
 </template>
 
 <script>
 export default {
-  async asyncData({ $content }) {
+  async asyncData({ $content, error }) {
     let articles = []
     let articleHeadline = []
-    let error = null
+    let tags = []
 
     try {
       articles = await $content('articles')
@@ -22,13 +23,18 @@ export default {
         .where({ headline: true })
         .limit(4)
         .fetch()
+      tags = await $content('tags')
+        .only(['name', 'description', 'img', 'slug'])
+        .sortBy('createdAt', 'asc')
+        .fetch()
     } catch (err) {
-      error = err
+      error(err)
     }
 
     return {
       articles,
       articleHeadline,
+      tags,
       error
     }
   }

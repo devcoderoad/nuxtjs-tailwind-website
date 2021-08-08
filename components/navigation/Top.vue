@@ -6,11 +6,7 @@
           <div class="flex items-center">
             <div class="flex-shrink-0">
               <NuxtLink to="/">
-                <img
-                  class="h-8 w-8"
-                  src="https://tailwindui.com/img/logos/workflow-mark-indigo-400.svg"
-                  alt="Workflow logo"
-                />
+                <Logo />
               </NuxtLink>
             </div>
             <div v-if="items && items.length > 0" class="hidden md:block">

@@ -5,11 +5,7 @@
         <div class="nav-content">
           <div class="flex flex-wrap items-center">
             <NuxtLink to="/" class="mr-2 text-gray-300 hover:text-gray-400">
-              <img
-                class="h-8 w-8"
-                src="https://tailwindui.com/img/logos/workflow-mark-indigo-400.svg"
-                alt="Logo"
-              />
+              <Logo />
             </NuxtLink>
             <NuxtLink
               to="/signin"
@@ -43,7 +39,7 @@
       </div>
       <div class="nav-info">
         <nav class="nav-link">
-          <h4 class="text-2xl">About Us</h4>
+          <h4 class="text-2xl font-black">About Us</h4>
           <ul>
             <li><a href="#about" title="About">About</a></li>
             <li><a href="#team" title="About">Teams</a></li>
@@ -52,7 +48,7 @@
           </ul>
         </nav>
         <nav class="nav-link">
-          <h4 class="text-2xl">Support</h4>
+          <h4 class="text-2xl font-black">Support</h4>
           <ul>
             <li><a href="#Technical" title="Technical">Technical</a></li>
             <li><a href="#Billing" title="Billing">Billing</a></li>
@@ -61,7 +57,7 @@
           </ul>
         </nav>
         <nav class="nav-link">
-          <h4 class="text-2xl">Office</h4>
+          <h4 class="text-2xl font-black">Office</h4>
           <ul>
             <li><a href="#main" title=">Main Office">Main Office</a></li>
             <li><a href="#us" title="Branch Office US">US Branch</a></li>
@@ -71,7 +67,7 @@
           </ul>
         </nav>
         <nav class="nav-link">
-          <h4 class="text-2xl">Resources</h4>
+          <h4 class="text-2xl font-black">Resources</h4>
           <ul>
             <li><a href="#pricing" title=">Pricing">Pricing</a></li>
             <li>

@@ -7,6 +7,23 @@
         class="boxed-bottom__right"
       >
         <div class="boxed-bottom-content xl:space-y-6" :rel="`card-${index}`">
+          <div class="inline-block">
+            <span
+              class="
+                px-3
+                py-1
+                border border-gray-400
+                bg-gray-200
+                text-gray-400
+                mb-4
+                block
+                rounded-full
+                uppercase
+                text-xs
+              "
+              >{{ item.category }}</span
+            >
+          </div>
           <Nuxt-Link
             :to="
               localePath({

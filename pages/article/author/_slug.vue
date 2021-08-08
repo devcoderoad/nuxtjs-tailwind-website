@@ -87,11 +87,13 @@
               hover:shadow-xl
               xxlmax:flex-col
               article-card
+              overflow-hidden
+              rounded-lg
             "
           >
             <img
               v-if="article.img"
-              class="h-auto xxlmin:w-1/2 xxlmax:w-full object-cover"
+              class="h-auto w-1/2 object-cover"
               :src="article.img"
               :alt="article.alt"
             />
@@ -105,10 +107,10 @@
                 xxlmax:w-full
               "
             >
-              <h3 class="font-bold">{{ article.title }}</h3>
-              <p class="my-3">{{ article.description }}</p>
+              <h4 class="font-bold">{{ article.title }}</h4>
+              <p class="my-2">{{ `${article.description.slice(0, 80)}..` }}</p>
               <p class="font-bold text-gray-600 text-sm">
-                {{ $dateFns.format(article.updatedAt, 'MMMM, dd yyyy') }}
+                {{ $dateFns.format(article.updatedAt, 'MMMM dd, yyyy') }}
               </p>
             </div>
           </NuxtLink>

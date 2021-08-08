@@ -7,6 +7,7 @@ author:
   name: CodeRoad
   bio: Web Developer and Tech Writer
   img: ../img/logo.jpg
+category: UI/UX
 tags:
   - web development
   - vuejs

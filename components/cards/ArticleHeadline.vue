@@ -78,7 +78,7 @@
               </div>
             </figcaption>
             <div class="relative flex flex-col sm:flex-row sm:space-x-4">
-              <Nuxt-Link
+              <!-- <Nuxt-Link
                 :to="
                   localePath({
                     name: 'article-slug',
@@ -95,6 +95,27 @@
                   text-lg text-white
                   bg-indigo-600
                   rounded-md
+                  sm:mb-0
+                  hover:bg-indigo-700
+                  sm:w-auto
+                "
+              > -->
+              <Nuxt-Link
+                :to="
+                  localePath({
+                    name: 'article-slug',
+                    params: { slug: item.slug }
+                  })
+                "
+                class="
+                  flex
+                  items-center
+                  w-full
+                  px-5
+                  py-2
+                  mb-3
+                  text-lg text-white
+                  bg-indigo-600
                   sm:mb-0
                   hover:bg-indigo-700
                   sm:w-auto
@@ -121,6 +142,7 @@
         <div class="w-full md:w-1/2">
           <div
             class="
+              bg-white
               w-full
               h-auto
               overflow-hidden
