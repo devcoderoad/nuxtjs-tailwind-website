@@ -10,7 +10,7 @@
       lg:flex-row
     "
   >
-    <MetaHead
+    <OgMetaHead
       :title="articles[0].author.name"
       :description="articles[0].author.bio"
       :image="articles[0].author.img"

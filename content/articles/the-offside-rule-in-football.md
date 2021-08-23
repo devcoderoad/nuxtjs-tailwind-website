@@ -7,7 +7,7 @@ author:
   name: CodeRoad
   bio: Markdown Writer
   img: ../img/logo.jpg
-category: Programming
+category: programming
 tags:
   - vuejs
 createdAt: 20-May-2021 00:05

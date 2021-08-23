@@ -10,7 +10,7 @@
       lg:flex-row
     "
   >
-    <MetaHead
+    <OgMetaHead
       :title="tag.name"
       :description="tag.description"
       :image="tag.img"
@@ -43,7 +43,7 @@
           >
             All Articles
           </NuxtLink>
-          <SearchInput class="self-center" />
+          <!-- <SearchInput class="self-center" /> -->
         </div>
       </div>
       <div class="mt-16 -mb-3 flex flex-col text-sm">
@@ -128,15 +128,15 @@
 export default {
   async asyncData({ $content, params, error }) {
     try {
-      const tags = await $content('tags')
-        .where({ slug: { $contains: params.tag } })
-        .limit(1)
+      const tag = await $content('tags', params.slug)
+        .only(['name', 'description', 'img', 'slug'])
         .fetch()
-      const tag = tags.length > 0 ? tags[0] : {}
-      const articles = await $content('articles', params.slug)
+
+      const articles = await $content('articles')
         .where({ tags: { $contains: tag.name }, status: 'publish' })
         .sortBy('createdAt', 'asc')
         .fetch()
+
       return {
         articles,
         tag

@@ -1,8 +1,6 @@
 <template>
   <section v-if="items && items.length && items.length > 0">
-    <h3 class="font-black text-2xl uppercase text-left mb-6">
-      {{ $t('label.topics') }}
-    </h3>
+    <h3 class="font-black text-2xl uppercase text-left mb-6">Topics</h3>
     <nav>
       <ul class="flex flex-wrap md:mb-4 text-left">
         <li
@@ -19,7 +17,12 @@
             border-l-2 border-gray-300
           "
         >
-          <NuxtLink :to="`/article/tag/${item.slug}`">
+          <NuxtLink
+            :to="{
+              name: 'article-tag-slug',
+              params: { slug: item.slug }
+            }"
+          >
             <p
               class="text-gray-500 uppercase tracking-wider font-medium text-ss"
             >

@@ -1,6 +1,7 @@
 <template>
   <div class="page-content min-h-screen h-full">
-    <MetaHead
+    <OgMetaHead
+      v-if="article"
       :title="article.title"
       :description="article.description"
       :image="article.img"
@@ -12,14 +13,6 @@
           <span
             >Author:
             <Nuxt-Link :to="`/article/author/${article.author.name}`">
-              <!-- <Nuxt-Link
-              :to="
-                localePath({
-                  name: 'article-author',
-                  params: { slug: article.slug, author: article.author.name }
-                })
-              "
-            > -->
               {{ article.author.name }}</Nuxt-Link
             ></span
           >
@@ -47,12 +40,7 @@
 export default {
   async asyncData({ app, $content, params, error }) {
     try {
-      const content =
-        app.i18n.locale === app.i18n.defaultLocale
-          ? `articles`
-          : `articles/${app.i18n.locale}`
-
-      const article = await $content(content, params.slug).fetch()
+      const article = await $content('articles', params.slug).fetch()
       const tagsList = await $content('tags')
         .only(['name', 'slug'])
         .where({ name: { $containsAny: article.tags } })

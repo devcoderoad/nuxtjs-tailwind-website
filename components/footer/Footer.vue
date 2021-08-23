@@ -23,8 +23,8 @@
         <div class="nav-content">
           <nav class="flex flex-row justify-end">
             <a href="#facebook" title="Facebook" class="w-6">
-              <span class="sr-only">Facebook</span
-              ><font-awesome-icon :icon="['fab', 'facebook']" />
+              <span class="sr-only">Facebook</span>
+              <font-awesome-icon :icon="['fab', 'facebook']" />
             </a>
             <a href="#twitter" title="Twitter" class="w-6">
               <span class="sr-only">Twitter</span>

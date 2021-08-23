@@ -11,26 +11,13 @@
             </div>
             <div v-if="items && items.length > 0" class="hidden md:block">
               <div class="ml-10 flex items-baseline">
-                <!-- <NuxtLink
-                  v-for="(item, index) in items"
-                  :key="item.slug"
-                  :to="{ name: 'page-slug', params: { slug: item.slug } }"
-                  :rel="`rel-${index}`"
-                  :class="`${
-                    index === 0
-                      ? `px-3 py-2 text-white bg-gray-900 focus:outline-none focus:text-white`
-                      : `ml-4 px-3 py-2 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white`
-                  } btn`"
-                  > -->
                 <NuxtLink
                   v-for="(item, index) in items"
                   :key="item.slug"
-                  :to="
-                    localePath({
-                      name: 'page-slug',
-                      params: { slug: item.slug }
-                    })
-                  "
+                  :to="{
+                    name: 'page-slug',
+                    params: { slug: item.slug }
+                  }"
                   :rel="`rel-${index}`"
                   :class="`${`ml-4 px-3 py-2 text-gray-400 hover:text-gray-500 focus:text-white capitalize font-bold text-sm`}`"
                 >
@@ -83,6 +70,7 @@
                       w-48
                       rounded-md
                       shadow-lg
+                      z-10
                     "
                   >
                     <div

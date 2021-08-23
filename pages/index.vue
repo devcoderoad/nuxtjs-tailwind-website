@@ -13,6 +13,7 @@ export default {
     let articles = []
     let articleHeadline = []
     let tags = []
+    let errors = []
 
     try {
       articles = await $content('articles')
@@ -28,6 +29,7 @@ export default {
         .sortBy('createdAt', 'asc')
         .fetch()
     } catch (err) {
+      errors = err
       error(err)
     }
 
@@ -35,8 +37,13 @@ export default {
       articles,
       articleHeadline,
       tags,
-      error
+      errors
     }
   }
+  // head() {
+  // console.log(this)
+  // const ua = this.$ua
+  // console.log(ua._parsed.name)
+  // }
 }
 </script>

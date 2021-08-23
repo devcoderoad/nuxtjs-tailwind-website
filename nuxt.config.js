@@ -1,7 +1,7 @@
-import {
-  // PRODUCTION,
-  I18N
-} from './config'
+// import {
+//   // PRODUCTION,
+//   I18N
+// } from './config'
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -49,7 +49,9 @@ export default {
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
     // Doc: https://github.com/nuxt-community/i18n-module
-    'nuxt-i18n'
+    // 'nuxt-i18n',
+    // Doc: https://github.com/fukuiretu/nuxt-user-agent
+    'nuxt-user-agent'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -73,13 +75,13 @@ export default {
     jit: true
   },
 
-  // Router
-  router: {
-    middleware: 'userAgent'
-  },
+  // // Router
+  // router: {
+  //   middleware: 'userAgent'
+  // },
 
   // I18N
-  i18n: I18N,
+  // i18n: I18N,
 
   // Generate routes
   generate: {
@@ -100,8 +102,20 @@ export default {
       /* Articles */
       if (articles === null || articles.length === 0) {
         articles = await $content('articles')
-          .where({ status: 'publish' })
+          .where({ status: 'publish', category: { $ne: '' } })
           .fetch()
+      }
+
+      /* Article Categories */
+      // if (categories === null || categories.length === 0) {
+      //   categories = await $content('articles')
+      //     .where({ status: 'publish', category: { $ne: '' } })
+      //     .fetch()
+      // }
+
+      /* Article Tags */
+      if (tags === null || tags.length === 0) {
+        tags = await $content('tags').fetch()
       }
 
       /* Pages */
@@ -113,6 +127,7 @@ export default {
       for (const article of articles) {
         authors.push(article.author.name)
         routes.push(`/article/${article.slug}`)
+        routes.push(`/article/category/${article.category.replace(' ', '_')}`)
       }
 
       /* Articles Authors */
@@ -122,10 +137,10 @@ export default {
         routes.push(`/article/author/${author}`)
       }
 
-      /* Article Tags */
-      if (tags === null || tags.length === 0) {
-        tags = await $content('tags').fetch()
-      }
+      /* Articles Categories */
+      // for (const category of categories) {
+      //   routes.push(`/article/category/${category.replace(' ', '_')}`)
+      // }
 
       /* Articles Tags */
       for (const tag of tags) {

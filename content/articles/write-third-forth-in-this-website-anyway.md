@@ -7,7 +7,7 @@ author:
   name: CodeRoad
   bio: Web Developer and Tech Writer
   img: ../img/logo.jpg
-category: StartUp
+category: startup
 tags:
   - web development
 createdAt: 20-May-2021 00:05

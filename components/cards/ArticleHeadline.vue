@@ -55,18 +55,13 @@
             >
               {{ item.description }}
             </p>
-            <figcaption class="font-medium">
+            <figcaption
+              v-if="item.author && item.author.length > 0"
+              class="font-medium"
+            >
               <div class="text-gray-500 text-sm flex flex-initial">
                 <span class="flex-1"
                   >By:
-                  <!-- <Nuxt-Link
-                    :to="
-                      localePath({
-                        name: 'article-author',
-                        params: { slug: item.author.name }
-                      })
-                    "
-                    > -->
                   <Nuxt-Link :to="`/article/author/${item.author.name}`">
                     {{ item.author.name }}</Nuxt-Link
                   ></span
@@ -78,35 +73,11 @@
               </div>
             </figcaption>
             <div class="relative flex flex-col sm:flex-row sm:space-x-4">
-              <!-- <Nuxt-Link
-                :to="
-                  localePath({
-                    name: 'article-slug',
-                    params: { slug: item.slug }
-                  })
-                "
-                class="
-                  flex
-                  items-center
-                  w-full
-                  px-5
-                  py-2
-                  mb-3
-                  text-lg text-white
-                  bg-indigo-600
-                  rounded-md
-                  sm:mb-0
-                  hover:bg-indigo-700
-                  sm:w-auto
-                "
-              > -->
               <Nuxt-Link
-                :to="
-                  localePath({
-                    name: 'article-slug',
-                    params: { slug: item.slug }
-                  })
-                "
+                :to="{
+                  name: 'article-slug',
+                  params: { slug: item.slug }
+                }"
                 class="
                   flex
                   items-center
@@ -152,12 +123,10 @@
             "
           >
             <Nuxt-Link
-              :to="
-                localePath({
-                  name: 'article-slug',
-                  params: { slug: item.slug }
-                })
-              "
+              :to="{
+                name: 'article-slug',
+                params: { slug: item.slug }
+              }"
             >
               <img
                 :src="item.img"

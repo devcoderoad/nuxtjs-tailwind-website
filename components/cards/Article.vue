@@ -8,7 +8,11 @@
       >
         <div class="boxed-bottom-content xl:space-y-6" :rel="`card-${index}`">
           <div class="inline-block">
-            <span
+            <Nuxt-Link
+              :to="{
+                name: 'article-category-slug',
+                params: { slug: item.category }
+              }"
               class="
                 px-3
                 py-1
@@ -21,16 +25,15 @@
                 uppercase
                 text-xs
               "
-              >{{ item.category }}</span
             >
+              {{ item.category }}
+            </Nuxt-Link>
           </div>
           <Nuxt-Link
-            :to="
-              localePath({
-                name: 'article-slug',
-                params: { slug: item.slug }
-              })
-            "
+            :to="{
+              name: 'article-slug',
+              params: { slug: item.slug }
+            }"
           >
             <img
               :src="item.img"
@@ -48,12 +51,10 @@
 
           <h4 class="headline text-muted leading-tight">
             <Nuxt-Link
-              :to="
-                localePath({
-                  name: 'article-slug',
-                  params: { slug: item.slug }
-                })
-              "
+              :to="{
+                name: 'article-slug',
+                params: { slug: item.slug }
+              }"
               >{{ item.title }}</Nuxt-Link
             >
           </h4>
@@ -88,12 +89,10 @@
           </div> -->
           <div>
             <Nuxt-Link
-              :to="
-                localePath({
-                  name: 'article-slug',
-                  params: { slug: item.slug }
-                })
-              "
+              :to="{
+                name: 'article-slug',
+                params: { slug: item.slug }
+              }"
               class="btn btn-sm btn-default btn-hidden text-muted"
               ><span class="underline hover:no-underline">read more</span>
               <span>
@@ -109,16 +108,16 @@
 </template>
 
 <script>
-import { fas } from '@fortawesome/free-solid-svg-icons'
+// import { fas } from '@fortawesome/free-solid-svg-icons'
 
 export default {
   props: {
     items: { type: Array, required: true, default: () => [] }
-  },
-  computed: {
-    fas() {
-      return fas
-    }
   }
+  // computed: {
+  //   fas() {
+  //     return fas
+  //   }
+  // }
 }
 </script>

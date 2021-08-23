@@ -5,7 +5,7 @@
     </div>
     <div class="block container mx-auto">
       <ColorMode />
-      <Languages class="my-3 block" />
+      <!-- <Languages class="my-3 block" /> -->
     </div>
   </div>
 </template>
