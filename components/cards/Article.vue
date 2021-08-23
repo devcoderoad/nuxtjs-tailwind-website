@@ -13,18 +13,7 @@
                 name: 'article-category-slug',
                 params: { slug: item.category }
               }"
-              class="
-                px-3
-                py-1
-                border border-gray-400
-                bg-gray-200
-                text-gray-400
-                mb-4
-                block
-                rounded-full
-                uppercase
-                text-xs
-              "
+              class="boxed-bottom-link"
             >
               {{ item.category }}
             </Nuxt-Link>
@@ -49,7 +38,7 @@
             />
           </Nuxt-Link>
 
-          <h4 class="headline text-muted leading-tight">
+          <h4 class="headline text-muted leading-tight mt-4">
             <Nuxt-Link
               :to="{
                 name: 'article-slug',
@@ -72,7 +61,7 @@
               </span>
             </div>
           </div> -->
-          <p class="text-justify text-sm">
+          <p class="text-justify text-sm my-4 xl:my-3">
             {{ item.description.slice(0, 90) }}...
           </p>
           <!-- <div class="text-sm text-gray-500 mt-2 mb-4">
