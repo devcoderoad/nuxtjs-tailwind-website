@@ -2,7 +2,7 @@
 
 @layer components {
   form {
-    @apply my-4 py-8;
+    @apply my-4 py-12;
   }
 
   input,

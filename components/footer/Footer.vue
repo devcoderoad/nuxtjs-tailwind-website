@@ -1,6 +1,6 @@
 <template>
   <footer class="py-3">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm">
       <div class="nav-info">
         <div class="nav-content">
           <div class="flex flex-wrap items-center">

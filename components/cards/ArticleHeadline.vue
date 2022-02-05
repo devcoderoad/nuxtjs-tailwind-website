@@ -90,6 +90,7 @@
                   sm:mb-0
                   hover:bg-indigo-700
                   sm:w-auto
+                  shadow-lg
                 "
               >
                 Read More
