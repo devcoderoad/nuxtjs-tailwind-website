@@ -15,7 +15,7 @@
         </label>
       </div>
       <div class="col-auto">
-        <button class="btn btn-lg btn-outline">Submit</button>
+        <button class="btn btn-lg btn-outline shadow-lg">Submit</button>
       </div>
     </form>
   </section>

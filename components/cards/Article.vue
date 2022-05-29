@@ -83,7 +83,7 @@
                 params: { slug: item.slug }
               }"
               class="btn btn-sm btn-default btn-hidden text-muted"
-              ><span class="underline hover:no-underline">read more</span>
+              ><span class="no-underline">read more</span>
               <span>
                 &rarr;
                 <!-- <font-awesome-icon :icon="['fa', 'arrow-right']"/> -->

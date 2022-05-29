@@ -37,7 +37,7 @@
                 xl:text-5xl
               "
             >
-              <span class="block xl:inline">{{ item.title }}</span>
+              {{ item.title }}
               <!-- <span
                 class="block text-indigo-600 xl:inline"
                 data-primary="indigo-600"

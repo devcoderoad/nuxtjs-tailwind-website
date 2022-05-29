@@ -2,7 +2,7 @@
 
 @layer components {
   .page-content {
-    @apply relative py-12 max-w-7xl mx-auto;
+    @apply relative py-12 mx-auto max-w-7xl;
   }
 
   .page-content::before,
@@ -33,5 +33,9 @@
     border-radius: 50%;
     opacity: 0.25;
     border: 4px solid #cdcdcd;
+  }
+
+  .page-content-single {
+    @apply relative py-12 mx-auto max-w-7xl h-screen;
   }
 }

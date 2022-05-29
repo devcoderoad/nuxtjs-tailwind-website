@@ -27,7 +27,9 @@
         </label>
       </div>
       <div class="col-auto">
-        <button class="btn btn-lg btn-outline btn-muted">Sign In</button>
+        <button class="btn btn-lg btn-outline btn-muted shadow-lg">
+          Sign In
+        </button>
         <Nuxt-Link
           to="/forgot"
           class="

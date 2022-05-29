@@ -1,5 +1,5 @@
 <template>
-  <div class="page-content">
+  <div class="page-content-single">
     <Form-Forgot />
   </div>
 </template>

@@ -15,7 +15,7 @@
   }
 
   .boxed-bottom-link {
-    @apply px-3 py-1 border border-gray-400 bg-gray-200 text-gray-400 mb-4 block rounded-full uppercase text-xs;
+    @apply px-3 py-1 border border-gray-400 bg-gray-200 text-gray-400 mb-4 block rounded-full uppercase text-xs hover:bg-gray-300 hover:text-gray-500;
   }
 
   .boxed-bottom-content::before {
